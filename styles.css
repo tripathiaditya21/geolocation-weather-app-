@@ -1,0 +1,476 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-size: cover; /* Ensure the background covers the entire screen */
+  background-position: center; /* Center the background image */
+  transition: background 0.5s ease; /* Smooth transition for background changes */
+}
+
+/* Main container */
+.container {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the container */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  max-width: 450px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #0c0d0e;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.subtext {
+  color: #888;
+  margin-bottom: 25px;
+}
+
+/* Weather display */
+.weather-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.weather-info h2 {
+  font-size: 4em;
+  color: #333;
+  font-weight: 700;
+}
+
+.weather-info p {
+  font-size: 1.4em;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Adjusting the weather icon */
+#random {
+  width: 120px;
+  margin-left: 20px;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.8); /* Background with slight transparency */
+  padding: 10px; /* Padding around the image */
+}
+
+#random:hover {
+  transform: scale(1.1);
+}
+
+/* Extra details */
+.extra-details {
+  margin: 25px 0;
+  font-size: 1.1em;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.extra-details p {
+  margin: 8px 0;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+button {
+  background-color: #0c0d0e;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0c0d0e;
+  transform: scale(1.05);
+}
+
+.note {
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 80%;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 90%;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    max-width: 95%;
+    margin: 10px;
+  }
+
+  #random {
+    width: 80px;
+  }
+
+  .weather-info h2 {
+    font-size: 2.5em;
+  }
+
+  .weather-display {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .extra-details {
+    font-size: 0.9em;
+  }
+
+  .search-city {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #city-input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #city-search-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .weather-info h2 {
+    font-size: 2em;
+  }
+
+  .weather-info p {
+    font-size: 1.2em;
+  }
+}
+
+/* Add support for landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  .container {
+    margin: 10px auto;
+  }
+}
+
+/* Styling for search input */
+.search-city {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#city-input {
+  padding: 12px;
+  font-size: 1em;
+  width: 70%;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#city-search-btn {
+  background-color: #0c0d0e;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#city-search-btn:hover {
+  background-color: #2f2e30;
+  transform: scale(1.05);
+}
+
+/* iPhone-specific styles */
+/* iPhone SE, 5, 5S, 5C */
+@media only screen and (device-width: 320px) and (device-height: 568px) {
+  .container {
+    padding: 10px;
+    margin: 10px;
+    max-width: 300px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .weather-info h2 {
+    font-size: 2.2em;
+  }
+}
+
+/* iPhone 6, 6S, 7, 8 */
+@media only screen and (device-width: 375px) and (device-height: 667px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 345px;
+  }
+}
+
+/* iPhone 6+, 6S+, 7+, 8+ */
+@media only screen and (device-width: 414px) and (device-height: 736px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 384px;
+  }
+}
+
+/* iPhone X, XS, 11 Pro */
+@media only screen and (device-width: 375px) and (device-height: 812px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 345px;
+    border-radius: 20px; /* More rounded corners for modern iPhones */
+  }
+}
+
+/* iPhone XR, 11 */
+@media only screen and (device-width: 414px) and (device-height: 896px) {
+  .container {
+    padding: 20px;
+    margin: 20px;
+    max-width: 374px;
+  }
+}
+
+/* iPhone 12, 12 Pro */
+@media only screen and (device-width: 390px) and (device-height: 844px) {
+  .container {
+    padding: 18px;
+    margin: 18px;
+    max-width: 354px;
+  }
+}
+
+/* Pixel Phones */
+/* Pixel 2 */
+@media only screen and (device-width: 411px) and (device-height: 731px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 381px;
+  }
+}
+
+/* Pixel 2 XL */
+@media only screen and (device-width: 411px) and (device-height: 823px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 381px;
+  }
+}
+
+/* Pixel 3, 3 XL */
+@media only screen and (min-width: 393px) and (max-width: 415px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 363px;
+  }
+}
+
+/* Pixel 4, 4 XL */
+@media only screen and (min-width: 353px) and (max-width: 412px) {
+  .container {
+    padding: 15px;
+    margin: 15px;
+    max-width: 382px;
+  }
+}
+
+/* Pixel 5 */
+@media only screen and (device-width: 393px) and (device-height: 851px) {
+  .container {
+    padding: 16px;
+    margin: 16px;
+    max-width: 361px;
+  }
+}
+
+/* Common mobile optimizations */
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .weather-display {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #random {
+    width: 80px;
+    margin: 0;
+  }
+
+  .weather-info h2 {
+    font-size: 2.5em;
+  }
+
+  .weather-info p {
+    font-size: 1.2em;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .search-city {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #city-input {
+    width: 100%;
+    margin-right: 0;
+    padding: 12px;
+  }
+
+  #city-search-btn {
+    width: 100%;
+  }
+
+  /* Safe area insets for notched phones */
+  .container {
+    padding-top: max(15px, env(safe-area-inset-top));
+    padding-bottom: max(15px, env(safe-area-inset-bottom));
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+}
+
+/* Handle landscape orientation */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 15px;
+  }
+
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+  }
+
+  .weather-display {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 48%;
+  }
+
+  .search-city {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  #city-input {
+    width: 70%;
+  }
+
+  #city-search-btn {
+    width: 28%;
+  }
+}
+
+/* Add smooth scrolling for iOS momentum scrolling */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
